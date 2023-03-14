@@ -1,0 +1,95 @@
+.game {
+  position: relative;
+  width: 600px;
+  height: 200px;
+  /* border-bottom: 1px solid #000; */
+  margin: 120px auto;
+  overflow: hidden;
+}
+
+.game::after{
+  position: absolute;
+  content: '';
+  height: 12px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-image: url(img/game-dino.png);
+  background-repeat: repeat-x;
+  background-position: 0px bottom;
+  background-size: auto 55px;
+  animation: bg-move 5s linear infinite;
+}
+
+.dino {
+  position: relative;
+  top: 156px;
+  width: 36px;
+  height: 47px;
+  background-image: url(img/game-dino.png);
+  background-repeat: no-repeat;
+  background-size: auto 50px;
+  background-position: -514px 8px;
+  animation: run-dino 0.4s  steps(4) infinite;
+}
+.dino.jump {
+  animation: dino-jump 0.4s linear;
+}
+
+.cactus {
+  position: relative;
+  top: 126px;
+  left: 572px;
+  width: 12px;
+  height: 27px;
+  background-image: url(img/game-dino.png);
+  background-repeat: no-repeat;
+  background-size: auto 50px;
+  background-position: -185px 0px;
+  animation: cactus-move 3s linear infinite;
+}
+
+@keyframes bg-move {
+  0% {
+    background-position: 0px bottom;
+  }
+  100% {
+    background-position: -1000px bottom;
+  }
+}
+
+@keyframes run-dino {
+
+  to {
+    background-position: -649px 8px;
+  }
+
+}
+
+@keyframes cactus-move {
+  0% {
+    left: 572px;
+  }
+  100% {
+    left: -20px;
+  }
+}
+
+@keyframes dino-jump {
+  0% {
+    top: 156px;
+  }
+  30% {
+    top: 136px;
+  }
+  50% {
+    top: 106px;
+  }
+  70% {
+    top: 136px;
+  }
+
+  100% {
+    top: 156px;
+  }
+}
